@@ -1,0 +1,97 @@
+name: {{ name }}
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+dependencies:
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  google_fonts: ^6.2.1
+  cached_network_image: ^3.2.0
+  device_info_plus: ^11.3.0
+  dio: ^5.8.0+1
+  equatable: ^2.0.3
+  firebase_analytics: ^11.4.2
+  firebase_core: ^3.11.0
+  firebase_crashlytics: ^4.3.2
+  firebase_messaging: ^15.2.2
+  flutter_bloc: ^9.0.0
+  flutter_local_notifications: ^18.0.1
+  flutter_screenutil: ^5.4.0+1
+  flutter_secure_storage: ^9.2.4
+  flutter_svg: ^2.0.17
+  get_it: ^8.0.3
+  intl: ^0.19.0
+  lottie: ^3.3.1
+  shared_preferences: ^2.0.15
+
+dev_dependencies:
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^5.0.0
+  intl_utils: ^2.7.0
+  flutter_localizations:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+# The following section is specific to Flutter.
+flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+  # To add assets to your application, add an assets section, like this:
+  # assets:
+  #   - assets/images/
+  # - assets/images/bottom_navbar/active/
+  # - assets/images/bottom_navbar/inactive/
+  # - assets/images/home/
+  # - assets/images/home/homeDisposalImage/
+  #   - images/a_dot_ham.jpeg
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Plus Jakarta Sans
+  #     fonts:
+  #       # - asset: assets/fonts/PlusJakarta/PlusJakartaSans-Thin.ttf
+  #       #   weight: 100
+  #       - asset: assets/fonts/PlusJakarta/PlusJakartaSans-ExtraLight.ttf
+  #         weight: 200
+  #       - asset: assets/fonts/PlusJakarta/PlusJakartaSans-Light.ttf
+  #         weight: 300
+  #       - asset: assets/fonts/PlusJakarta/PlusJakartaSans-Regular.ttf
+  #       - asset: assets/fonts/PlusJakarta/PlusJakartaSans-Medium.ttf
+  #         weight: 500
+  #       - asset: assets/fonts/PlusJakarta/PlusJakartaSans-SemiBold.ttf
+  #         weight: 600
+  #       - asset: assets/fonts/PlusJakarta/PlusJakartaSans-Bold.ttf
+  #         weight: 700
+  #       - asset: assets/fonts/PlusJakarta/PlusJakartaSans-ExtraBold.ttf
+  #         weight: 800
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true
+  main_locale: en
+  arb_dir: lib/l10n
