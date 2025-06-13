@@ -8,29 +8,61 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.16.2 <3.0.0"
+  sdk: ">=2.16.2 <4.0.0"
 dependencies:
-  cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-  google_fonts: ^6.2.1
-  cached_network_image: ^3.2.0
-  device_info_plus: ^11.3.0
-  dio: ^5.8.0+1
-  equatable: ^2.0.3
-  firebase_analytics: ^11.4.2
-  firebase_core: ^3.11.0
-  firebase_crashlytics: ^4.3.2
-  firebase_messaging: ^15.2.2
-  flutter_bloc: ^9.0.0
-  flutter_local_notifications: ^18.0.1
-  flutter_screenutil: ^5.4.0+1
-  flutter_secure_storage: ^9.2.4
-  flutter_svg: ^2.0.17
-  get_it: ^8.0.3
-  intl: ^0.19.0
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+  
+  # State management
+  flutter_bloc: ^8.1.4
+  get_it: ^7.6.7
+  
+  # Navigation
+  go_router: ^13.2.0
+  
+  # Models
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.8.1
+  
+  # Storage
+  shared_preferences: ^2.2.2
+  
+  # UI
+  flutter_svg: ^2.0.10+1
+  google_fonts: ^6.2.0
+  flutter_screenutil: ^5.9.0
   lottie: ^3.3.1
-  shared_preferences: ^2.0.15
+  dotted_border: ^2.1.0
+  shimmer: ^2.0.0
+  flutter_expandable_fab: ^2.4.1
+
+  url_launcher: ^6.3.1
+
+  # Smooth page indicator
+  smooth_page_indicator: ^1.2.1
+  pinput: ^5.0.1
+  auto_route: ^10.1.0+1
+  auto_route_generator: ^10.0.1
+  build_runner: ^2.4.15
+  dio: ^5.8.0+1
+  flutter_launcher_icons: ^0.14.3
+  flutter_dotenv: ^5.2.1
+  mapbox_maps_flutter: ^2.7.0
+  maps_launcher: ^3.0.0+1
+  # mapbox_maps_flutter_draw: ^0.2.1
+  provider: ^6.0.0
+  intl: ^0.19.0
+  syncfusion_flutter_calendar: ^29.1.40
+  file_picker: ^10.1.2
+  mime: ^1.0.4
+  country_picker: ^2.0.27
+  firebase_core: ^3.13.1
+  firebase_messaging: ^15.2.1
+  flutter_local_notifications: ^19.0.0
 
 dev_dependencies:
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -39,12 +71,40 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
-  intl_utils: ^2.7.0
   flutter_localizations:
     sdk: flutter
   flutter_test:
     sdk: flutter
+  json_serializable: ^6.7.1
+  flutter_gen_runner: ^5.4.0
+  flutter_intl: ^0.0.1
+  intl_utils: ^2.8.3
 
+
+# FlutterGen configuration
+flutter_gen:
+  output: lib/generated/
+  line_length: 80
+  
+  integrations:
+    flutter_svg: true
+
+flutter_intl:
+  enabled: true
+  class_name: S
+  main_locale: en
+  arb_dir: lib/l10n
+  output_dir: lib/generated
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  adaptive_icon_background: "#EBA116"
+  adaptive_icon_foreground: "assets/images/app_icon.png"
+  adaptive_icon_monochrome: "assets/images/app_icon.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter.
@@ -56,11 +116,14 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - assets/images/
-  # - assets/images/bottom_navbar/active/
-  # - assets/images/bottom_navbar/inactive/
-  # - assets/images/home/
-  # - assets/images/home/homeDisposalImage/
-  #   - images/a_dot_ham.jpeg
+  #   - assets/icons/
+  #   - assets/icons/dashboard/
+  #   - assets/icons/field_info/
+  #   - assets/icons/settings/
+  #   - assets/icons/task/
+  #   - assets/lottie/
+  #   - assets/gif/
+  #   - .env
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
@@ -70,28 +133,21 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Plus Jakarta Sans
+  fonts:
+    - family: Geist
+      fonts:
+        - asset: assets/fonts/Geist/Geist-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Geist/Geist-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Geist/Geist-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Geist/Geist-Bold.ttf
+          weight: 700
+  #   - family: Trajan Pro
   #     fonts:
-  #       # - asset: assets/fonts/PlusJakarta/PlusJakartaSans-Thin.ttf
-  #       #   weight: 100
-  #       - asset: assets/fonts/PlusJakarta/PlusJakartaSans-ExtraLight.ttf
-  #         weight: 200
-  #       - asset: assets/fonts/PlusJakarta/PlusJakartaSans-Light.ttf
-  #         weight: 300
-  #       - asset: assets/fonts/PlusJakarta/PlusJakartaSans-Regular.ttf
-  #       - asset: assets/fonts/PlusJakarta/PlusJakartaSans-Medium.ttf
-  #         weight: 500
-  #       - asset: assets/fonts/PlusJakarta/PlusJakartaSans-SemiBold.ttf
-  #         weight: 600
-  #       - asset: assets/fonts/PlusJakarta/PlusJakartaSans-Bold.ttf
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-  #       - asset: assets/fonts/PlusJakarta/PlusJakartaSans-ExtraBold.ttf
-  #         weight: 800
-  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-flutter_intl:
-  enabled: true
-  main_locale: en
-  arb_dir: lib/l10n
