@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import '../../shared/models/base.dart';
 
 class UserModel extends BaseModel {
