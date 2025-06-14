@@ -22,7 +22,8 @@ dependencies:
   get_it: ^7.6.7
   
   # Navigation
-  go_router: ^13.2.0
+  auto_route: ^10.1.0+1
+  auto_route_generator: ^10.0.1
   
   # Models
   freezed_annotation: ^2.4.1
@@ -30,39 +31,74 @@ dependencies:
   
   # Storage
   shared_preferences: ^2.2.2
+  # isar: ^3.1.0+1
+  # isar_flutter_libs: ^3.1.0+1
   
   # UI
   flutter_svg: ^2.0.10+1
   google_fonts: ^6.2.0
-  flutter_screenutil: ^5.9.0
+  # flutter_screenutil: ^5.9.0
   lottie: ^3.3.1
   dotted_border: ^2.1.0
   shimmer: ^2.0.0
   flutter_expandable_fab: ^2.4.1
-
-  url_launcher: ^6.3.1
-
-  # Smooth page indicator
-  smooth_page_indicator: ^1.2.1
+  # modal_bottom_sheet: ^3.0.0
+  # pin_code_fields: ^8.0.1
   pinput: ^5.0.1
-  auto_route: ^10.1.0+1
-  auto_route_generator: ^10.0.1
-  build_runner: ^2.4.15
+  smooth_page_indicator: ^1.2.1
+  cached_network_image: ^3.4.1
+
+  # Network
   dio: ^5.8.0+1
-  flutter_launcher_icons: ^0.14.3
+  url_launcher: ^6.3.1
+  web_socket_channel: ^2.4.0
+  connectivity_plus: 6.1.0
+  network_info_plus: 6.1.1
+
+  # Utils
   flutter_dotenv: ^5.2.1
+  intl: ^0.19.0
+  timeago: ^3.7.0
+  uuid: 4.5.1
+  money2: ^5.2.1
+  faker: ^2.1.0
+  device_info_plus: ^10.1.2
+  path_provider: ^2.1.4
+  mime: ^1.0.4
+
+  # Maps
   mapbox_maps_flutter: ^2.7.0
   maps_launcher: ^3.0.0+1
-  # mapbox_maps_flutter_draw: ^0.2.1
-  provider: ^6.0.0
-  intl: ^0.19.0
+
+  # Calendar
   syncfusion_flutter_calendar: ^29.1.40
+
+  # File handling
   file_picker: ^10.1.2
-  mime: ^1.0.4
-  country_picker: ^2.0.27
+
+  # Authentication
+  google_sign_in: ^6.2.2
+  flutter_facebook_auth: ^7.1.1
+  twitter_login: ^4.4.1
+  sign_in_with_apple: ^6.1.4
+  jwt_decoder: ^2.0.1
+
+  # QR & Camera
+  # qr_code_scanner_plus: ^2.0.7
+  # qr_flutter: ^4.1.0
+  # camera: ^0.10.0
+  # permission_handler: ^11.3.1
+
+  # Firebase
   firebase_core: ^3.13.1
   firebase_messaging: ^15.2.1
   flutter_local_notifications: ^19.0.0
+
+  # Others
+  provider: ^6.0.0
+  country_picker: ^2.0.27
+  flutter_datetime_picker_plus: ^2.2.0
+  sentry_flutter: ^8.14.0
 
 dev_dependencies:
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -79,6 +115,13 @@ dev_dependencies:
   flutter_gen_runner: ^5.4.0
   flutter_intl: ^0.0.1
   intl_utils: ^2.8.3
+  build_runner: ^2.4.15
+  freezed: ^2.5.7
+  # custom_lint: ^0.7.1
+  # riverpod_generator: ^2.4.2
+  # riverpod_lint: ^2.3.12
+  # isar_generator: ^3.1.0+1
+  flutter_launcher_icons: ^0.14.3
 
 
 # FlutterGen configuration
@@ -115,14 +158,11 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   # assets:
-  #   - assets/images/
-  #   - assets/icons/
-  #   - assets/icons/dashboard/
-  #   - assets/icons/field_info/
-  #   - assets/icons/settings/
-  #   - assets/icons/task/
-  #   - assets/lottie/
-  #   - assets/gif/
+    - assets/images/
+    - assets/images/
+    - assets/icons/
+    - assets/socials/
+    - shorebird.yaml
   #   - .env
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
