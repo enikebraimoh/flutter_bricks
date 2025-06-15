@@ -1,10 +1,6 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
-// import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter/foundation.dart';
-
 import '../../config/app_configs.dart';
 import '../models/base.dart';
 
@@ -68,7 +64,7 @@ class UserTokenManager {
   static Future<String?> getAccessToken() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final token = prefs.getString(AppConstants.userToken);
+      final token = prefs.getString(AppConstants.authTokenKey);
       debugPrint('Getting token from storage: $token');
       return token;
     } catch (e) {
@@ -80,7 +76,7 @@ class UserTokenManager {
   static Future<void> deleteAccessToken() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      await prefs.remove(AppConstants.userToken);
+      await prefs.remove(AppConstants.authTokenKey);
       debugPrint('Token deleted from storage');
     } catch (e) {
       debugPrint('Error deleting token: $e');
@@ -90,7 +86,7 @@ class UserTokenManager {
   static Future<String> insertAccessToken(String token) async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      await prefs.setString(AppConstants.userToken, token);
+      await prefs.setString(AppConstants.authTokenKey, token);
       debugPrint('Token inserted to storage: $token');
       return token;
     } catch (e) {

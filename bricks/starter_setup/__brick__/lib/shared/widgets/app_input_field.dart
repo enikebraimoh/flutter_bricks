@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../utils/colors.dart';
+import '../../theme/colors.dart';
 
 class AppInputField extends StatefulWidget {
   final String? labelText;
@@ -33,7 +32,6 @@ class AppInputField extends StatefulWidget {
   final VoidCallback? onTogglePassword;
 
   const AppInputField({
-    super.key,
     this.labelText,
     this.keyboardType = TextInputType.text,
     this.isPassword = false,
@@ -101,7 +99,7 @@ class _AppInputFieldState extends State<AppInputField> {
           Text(
             widget.labelText!,
             style: TextStyle(
-              color: AppColors.selarBlack,
+              color: AppColors.textPrimary,
               fontSize: 14,
               fontFamily: GoogleFonts.dmSans().fontFamily,
             ),
@@ -130,22 +128,23 @@ class _AppInputFieldState extends State<AppInputField> {
               decoration: InputDecoration(
                 hintText: widget.hintText,
                 prefixIcon: widget.prefixIcon,
-                suffixIcon: widget.isPassword && widget.showPasswordToggle
-                    ? IconButton(
-                        icon: Icon(
-                          _obscureText
-                              ? Icons.visibility_off
-                              : Icons.visibility,
-                          color: Colors.grey,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            _obscureText = !_obscureText;
-                          });
-                          widget.onTogglePassword?.call();
-                        },
-                      )
-                    : null,
+                suffixIcon:
+                    widget.isPassword && widget.showPasswordToggle
+                        ? IconButton(
+                          icon: Icon(
+                            _obscureText
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            color: Colors.grey,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _obscureText = !_obscureText;
+                            });
+                            widget.onTogglePassword?.call();
+                          },
+                        )
+                        : null,
                 alignLabelWithHint: widget.alignLabelWithHint,
                 floatingLabelBehavior: FloatingLabelBehavior.never,
               ),
@@ -168,8 +167,8 @@ class _AppInputFieldState extends State<AppInputField> {
           Text(
             errorString ?? "",
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: Theme.of(context).colorScheme.error,
-                ),
+              color: Theme.of(context).colorScheme.error,
+            ),
           ),
         ],
         // if (widget.isPassword) ...[

@@ -3,16 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
-import 'package:pollinlink_app/config/app_configs.dart';
-import 'package:pollinlink_app/features/agronomist/info_field/di.dart';
-import 'package:pollinlink_app/features/auth/di.dart';
-import 'package:pollinlink_app/features/shared/notifications/di.dart';
-import 'package:pollinlink_app/features/shared/settings/di.dart';
-import 'package:pollinlink_app/firebase_options.dart';
-import 'package:pollinlink_app/models/user/user_model.dart';
-import 'package:pollinlink_app/shared/utils/firebase_notification_manager.dart';
-import 'package:pollinlink_app/shared/utils/storage.dart';
-import 'package:pollinlink_app/features/shared/tasks/di.dart';
+import 'package:{{name.pascalCase()}}/config/app_configs.dart';
+import 'package:{{name.pascalCase()}}/firebase_options.dart';
+import 'package:{{name.pascalCase()}}/shared/models/auth_user.dart';
+import 'package:{{name.pascalCase()}}/shared/services/firebase_notification_manager.dart';
+import 'package:{{name.pascalCase()}}/shared/utils/storage.dart';
 
 // This is our global ServiceLocator
 final getIt = GetIt.instance;
@@ -27,11 +22,11 @@ class AppStartUp {
   }
 
   Future<void> registerServices(GetIt ioc) async {
-    setupAuthDependencies(getIt);
-    setupFieldDependencies(getIt);
-    setupTaskDependencies(getIt);
-    setupSettingsDependencies(getIt);
-    setupNotificationDependencies(getIt);
+    // setupAuthDependencies(getIt);
+    // setupFieldDependencies(getIt);
+    // setupTaskDependencies(getIt);
+    // setupSettingsDependencies(getIt);
+    // setupNotificationDependencies(getIt);
     await loadEnvironmentVariables();
   }
 

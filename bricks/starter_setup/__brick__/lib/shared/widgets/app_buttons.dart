@@ -1,6 +1,6 @@
-import 'package:Tickets_by_Selar/shared/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../theme/colors.dart';
 
 class AppFilledButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -10,7 +10,6 @@ class AppFilledButton extends StatelessWidget {
   final bool isLoading;
 
   const AppFilledButton({
-    super.key,
     required this.onPressed,
     required this.text,
     this.isLoading = false,
@@ -23,8 +22,9 @@ class AppFilledButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: isLoading ? null : onPressed,
       style: ElevatedButton.styleFrom(
-          backgroundColor: bgColor ?? Theme.of(context).primaryColor,
-          foregroundColor: foreBgColor ?? AppColors.selarWhite),
+        backgroundColor: bgColor ?? Theme.of(context).primaryColor,
+        foregroundColor: foreBgColor ?? AppColors.white,
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 17.5),
         child: Row(
@@ -35,7 +35,7 @@ class AppFilledButton extends StatelessWidget {
                 height: 20,
                 width: 20,
                 child: CircularProgressIndicator(
-                  color: AppColors.selarPurple,
+                  color: AppColors.primary,
                   strokeWidth: 2,
                 ),
               ),
@@ -57,7 +57,6 @@ class AppOutlinedButton extends StatelessWidget {
   final Widget? icon;
 
   const AppOutlinedButton({
-    super.key,
     required this.onPressed,
     required this.text,
     this.padding,
@@ -79,9 +78,7 @@ class AppOutlinedButton extends StatelessWidget {
               const SizedBox(
                 height: 20,
                 width: 20,
-                child: CircularProgressIndicator(
-                  strokeWidth: 2,
-                ),
+                child: CircularProgressIndicator(strokeWidth: 2),
               ),
               const SizedBox(width: 8),
             ] else if (icon != null) ...[
@@ -93,7 +90,7 @@ class AppOutlinedButton extends StatelessWidget {
                 height: 20,
                 width: 20,
                 child: CircularProgressIndicator(
-                  color: AppColors.selarPurple,
+                  color: AppColors.primary,
                   strokeWidth: 2,
                 ),
               ),
@@ -103,7 +100,7 @@ class AppOutlinedButton extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  color: AppColors.selarPurple,
+                  color: AppColors.primary,
                   fontFamily: GoogleFonts.dmSans().fontFamily,
                 ),
               ),

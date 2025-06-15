@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
-import 'colors.dart';
+import '../../theme/colors.dart';
 
 class DisplayUtils {
   // number formatter
@@ -14,14 +13,18 @@ class DisplayUtils {
   }
 
   static String formatAmount(int amount, {bool withDecimals = true}) {
-    var formattedNumber =
-        formatNumber(amount / 100.00, withDecimals: withDecimals);
+    var formattedNumber = formatNumber(
+      amount / 100.00,
+      withDecimals: withDecimals,
+    );
     return formattedNumber;
   }
 
   static String formatPrice(double amount, {bool withDecimals = false}) {
-    var formattedNumber =
-        formatNumber(amount.toDouble(), withDecimals: withDecimals);
+    var formattedNumber = formatNumber(
+      amount.toDouble(),
+      withDecimals: withDecimals,
+    );
     return formattedNumber;
   }
 
@@ -51,9 +54,7 @@ class DisplayUtils {
 
   static String formatDateToTodayOrYesterday(String rawDate) {
     DateTime todayDate = DateTime.now();
-    DateTime yesterdayDate = DateTime.now().subtract(
-      const Duration(days: 1),
-    );
+    DateTime yesterdayDate = DateTime.now().subtract(const Duration(days: 1));
     String parsedTodayDate = DateFormat("yyyy-MM-dd").format(todayDate);
     String parsedYesterdatDate = DateFormat("yyyy-MM-dd").format(yesterdayDate);
     if (rawDate == parsedTodayDate) {
@@ -101,32 +102,33 @@ class DisplayUtils {
   }) async {
     DateTime today = DateTime.now();
     DateTime? selectedDate = await showDatePicker(
-        context: context,
-        initialDate: today,
-        firstDate: firstDate ?? DateTime(2000),
-        lastDate: DateTime(2035),
-        builder: (BuildContext context, Widget? child) {
-          return Theme(
-            data: ThemeData.dark().copyWith(
-              colorScheme: ColorScheme.dark(
-                primary: AppColors.selarPurple,
-                onPrimary: Colors.white,
-                surface: AppColors.selarPurple,
-                onSurface: Colors.black,
-              ),
-              dialogBackgroundColor: Colors.white,
+      context: context,
+      initialDate: today,
+      firstDate: firstDate ?? DateTime(2000),
+      lastDate: DateTime(2035),
+      builder: (BuildContext context, Widget? child) {
+        return Theme(
+          data: ThemeData.dark().copyWith(
+            colorScheme: ColorScheme.dark(
+              primary: AppColors.primary,
+              onPrimary: Colors.white,
+              surface: AppColors.primary,
+              onSurface: Colors.black,
             ),
-            child: child!,
-          );
-        },
-        confirmText: 'Okay',
-        cancelText: 'Not now',
-        selectableDayPredicate: (DateTime d) {
-          if (d.isBefore(DateTime.now().add(Duration(days: addedDay!)))) {
-            return true;
-          }
-          return false;
-        });
+            dialogBackgroundColor: Colors.white,
+          ),
+          child: child!,
+        );
+      },
+      confirmText: 'Okay',
+      cancelText: 'Not now',
+      selectableDayPredicate: (DateTime d) {
+        if (d.isBefore(DateTime.now().add(Duration(days: addedDay!)))) {
+          return true;
+        }
+        return false;
+      },
+    );
 
     return selectedDate;
   }
@@ -137,43 +139,47 @@ class DisplayUtils {
     required Function(DateTime? value) onSelect,
   }) async {
     showCupertinoModalPopup(
-        barrierDismissible: false,
-        context: ctx,
-        builder: (_) => Container(
-              height: 240.h,
-              color: const Color.fromARGB(255, 255, 255, 255),
-              child: Column(
-                children: [
-                  Material(
-                    child: Padding(
-                      padding: EdgeInsets.only(right: 20.w, top: 10.h),
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: GestureDetector(
-                          onTap: () {
-                            // getIt<NavigationService>().back();
-                          },
-                          child: Text(
-                            "Done",
-                            style: TextStyle(
-                                fontSize: 12.sp, fontWeight: FontWeight.bold),
+      barrierDismissible: false,
+      context: ctx,
+      builder:
+          (_) => Container(
+            height: 240,
+            color: const Color.fromARGB(255, 255, 255, 255),
+            child: Column(
+              children: [
+                Material(
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 20, top: 10),
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: GestureDetector(
+                        onTap: () {
+                          // getIt<NavigationService>().back();
+                        },
+                        child: Text(
+                          "Done",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 200.h,
-                    child: CupertinoDatePicker(
-                      mode: CupertinoDatePickerMode.date,
-                      initialDateTime: DateTime.now(),
-                      minimumDate: firstDate ?? DateTime(2000),
-                      onDateTimeChanged: onSelect,
-                    ),
+                ),
+                SizedBox(
+                  height: 200,
+                  child: CupertinoDatePicker(
+                    mode: CupertinoDatePickerMode.date,
+                    initialDateTime: DateTime.now(),
+                    minimumDate: firstDate ?? DateTime(2000),
+                    onDateTimeChanged: onSelect,
                   ),
-                ],
-              ),
-            ));
+                ),
+              ],
+            ),
+          ),
+    );
   }
 }
 

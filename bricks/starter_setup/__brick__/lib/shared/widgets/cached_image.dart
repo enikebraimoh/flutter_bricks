@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../utils/colors.dart';
+import '../../theme/colors.dart';
 
 class SelarCachedImage extends StatelessWidget {
   final String imageUrl;
@@ -13,7 +12,6 @@ class SelarCachedImage extends StatelessWidget {
   final Widget? errorWidget;
 
   const SelarCachedImage({
-    super.key,
     required this.imageUrl,
     this.height,
     this.width,
@@ -33,8 +31,8 @@ class SelarCachedImage extends StatelessWidget {
         width: width,
         fit: boxFit,
         placeholder: (context, url) => placeholder ?? _buildPlaceholder(),
-        errorWidget: (context, url, error) =>
-            errorWidget ?? _buildErrorWidget(),
+        errorWidget:
+            (context, url, error) => errorWidget ?? _buildErrorWidget(),
       ),
     );
   }
@@ -43,14 +41,14 @@ class SelarCachedImage extends StatelessWidget {
     return Container(
       height: height,
       width: width,
-      color: AppColors.selarGrey7,
+      color: AppColors.grey03,
       child: Center(
         child: SizedBox(
-          width: 24.w,
-          height: 24.w,
+          width: 24,
+          height: 24,
           child: CircularProgressIndicator(
             strokeWidth: 2,
-            valueColor: AlwaysStoppedAnimation<Color>(AppColors.selarPurple),
+            valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
           ),
         ),
       ),
@@ -61,13 +59,9 @@ class SelarCachedImage extends StatelessWidget {
     return Container(
       height: height,
       width: width,
-      color: AppColors.selarGrey7,
+      color: AppColors.grey03,
       child: Center(
-        child: Icon(
-          Icons.error_outline,
-          color: AppColors.selarRed,
-          size: 24.w,
-        ),
+        child: Icon(Icons.error_outline, color: AppColors.error, size: 24),
       ),
     );
   }
