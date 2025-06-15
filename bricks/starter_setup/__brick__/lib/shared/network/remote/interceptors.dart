@@ -3,8 +3,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import '../../../config/app_configs.dart';
-import '../../../router/router.dart';
-import '../../../router/router.gr.dart';
+import 'package:{{name.snakeCase()}}/shared/router/router.dart';
 import '../../utils/storage.dart';
 
 enum HeaderContentType { formType, jsonType }
@@ -22,7 +21,9 @@ class HeaderInterceptor extends Interceptor {
 
   @override
   void onRequest(
-      RequestOptions options, RequestInterceptorHandler handler) async {
+    RequestOptions options,
+    RequestInterceptorHandler handler,
+  ) async {
     if (hasToken) {
       final token = await UserTokenManager.getAccessToken();
       if (token != null) {
@@ -40,7 +41,8 @@ class HeaderInterceptor extends Interceptor {
   void onResponse(Response response, ResponseInterceptorHandler handler) {
     debugPrint('DioResponse api: ${response.realUri.toString()}');
     debugPrint(
-        'DioResponse payload: ${jsonEncode(response.requestOptions.data)}');
+      'DioResponse payload: ${jsonEncode(response.requestOptions.data)}',
+    );
     debugPrint('DioResponse response: ${jsonEncode(response.data)}');
     debugPrint('DioResponse-----------------------------------------------');
     debugPrint('DioResponse-----------------------------------------------');
@@ -50,7 +52,8 @@ class HeaderInterceptor extends Interceptor {
   @override
   onError(DioException err, ErrorInterceptorHandler handler) {
     debugPrint(
-        'DioException: ${err.response?.realUri.toString()} ${err.response?.statusCode}');
+      'DioException: ${err.response?.realUri.toString()} ${err.response?.statusCode}',
+    );
     debugPrint('DioException: ${jsonEncode(err.requestOptions.data)}');
     debugPrint('DioException: ${jsonEncode(err.response?.data)}');
     debugPrint('DioException-----------------------------------------------');
@@ -66,9 +69,6 @@ class HeaderInterceptor extends Interceptor {
     UserTokenManager.deleteAccessToken();
     LocalStorageUtils.delete(AppConstants.userObject);
 
-    AppRouter().pushAndPopUntil(
-      const LoginRoute(),
-      predicate: (_) => false,
-    );
+    AppRouter().pushAndPopUntil(const LoginRoute(), predicate: (_) => false);
   }
 }

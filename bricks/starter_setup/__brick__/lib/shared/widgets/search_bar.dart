@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:{{name.pascalCase()}}/generated/assets.gen.dart';
+import 'package:{{name.snakeCase()}}/generated/assets.gen.dart';
 import '../../theme/colors.dart';
 
 class AppSearchBar extends StatelessWidget {
@@ -42,7 +42,7 @@ class AppSearchBar extends StatelessWidget {
           height: 20,
           width: 10,
           child: Center(
-            child: Assets.icons.search.svg(width: 24.0, height: 24.0),
+            child: Assets.icons.addCircle.svg(width: 24.0, height: 24.0),
           ),
         ),
         suffixIcon: SizedBox(

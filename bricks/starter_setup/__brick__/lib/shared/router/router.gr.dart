@@ -10,56 +10,54 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i24;
 import 'package:flutter/material.dart' as _i26;
-import 'package:Tickets_by_Selar/models/user_event.dart' as _i27;
-import 'package:Tickets_by_Selar/screens/auth/forgot_password.dart' as _i2;
-import 'package:Tickets_by_Selar/screens/auth/login_screen.dart' as _i9;
-import 'package:Tickets_by_Selar/screens/auth/onboarding/onboarding_screen.dart'
+import 'package:{{name.snakeCase()}}/models/user_event.dart' as _i27;
+import 'package:{{name.snakeCase()}}/screens/auth/forgot_password.dart' as _i2;
+import 'package:{{name.snakeCase()}}/screens/auth/login_screen.dart' as _i9;
+import 'package:{{name.snakeCase()}}/screens/auth/onboarding/onboarding_screen.dart'
     as _i12;
-import 'package:Tickets_by_Selar/screens/auth/splash_screen.dart' as _i22;
-import 'package:Tickets_by_Selar/screens/auth/start_screen.dart' as _i23;
-import 'package:Tickets_by_Selar/screens/events/events_home_screen.dart' as _i1;
-import 'package:Tickets_by_Selar/screens/events/past_and_upcoming_events_screen.dart'
+import 'package:{{name.snakeCase()}}/screens/auth/splash_screen.dart' as _i22;
+import 'package:{{name.snakeCase()}}/screens/auth/start_screen.dart' as _i23;
+import 'package:{{name.snakeCase()}}/screens/events/events_home_screen.dart'
+    as _i1;
+import 'package:{{name.snakeCase()}}/screens/events/past_and_upcoming_events_screen.dart'
     as _i17;
-import 'package:Tickets_by_Selar/screens/events/single_event_screen.dart'
+import 'package:{{name.snakeCase()}}/screens/events/single_event_screen.dart'
     as _i20;
-import 'package:Tickets_by_Selar/screens/group_scan/group_scan_auth_screen.dart'
+import 'package:{{name.snakeCase()}}/screens/group_scan/group_scan_auth_screen.dart'
     as _i3;
-import 'package:Tickets_by_Selar/screens/group_scan/group_scan_host_screen.dart'
+import 'package:{{name.snakeCase()}}/screens/group_scan/group_scan_host_screen.dart'
     as _i4;
-import 'package:Tickets_by_Selar/screens/group_scan/group_scan_how_screen.dart'
+import 'package:{{name.snakeCase()}}/screens/group_scan/group_scan_how_screen.dart'
     as _i5;
-import 'package:Tickets_by_Selar/screens/group_scan/group_scan_screen.dart'
+import 'package:{{name.snakeCase()}}/screens/group_scan/group_scan_screen.dart'
     as _i6;
-import 'package:Tickets_by_Selar/screens/group_scan/online_group_scan_auth_screen.dart'
+import 'package:{{name.snakeCase()}}/screens/group_scan/online_group_scan_auth_screen.dart'
     as _i13;
-import 'package:Tickets_by_Selar/screens/group_scan/online_guest_list_screen.dart'
+import 'package:{{name.snakeCase()}}/screens/group_scan/online_guest_list_screen.dart'
     as _i14;
-import 'package:Tickets_by_Selar/screens/group_scan/online_scan_how_screen.dart'
+import 'package:{{name.snakeCase()}}/screens/group_scan/online_scan_how_screen.dart'
     as _i16;
-import 'package:Tickets_by_Selar/screens/guest_list/guest_list_home_screen.dart'
+import 'package:{{name.snakeCase()}}/screens/guest_list/guest_list_home_screen.dart'
     as _i7;
-import 'package:Tickets_by_Selar/screens/guest_list/single_guest_list_screen.dart'
+import 'package:{{name.snakeCase()}}/screens/guest_list/single_guest_list_screen.dart'
     as _i21;
-import 'package:Tickets_by_Selar/screens/layouts/home_tab.dart' as _i8;
-import 'package:Tickets_by_Selar/screens/scan/scan_screen.dart' as _i18;
-import 'package:Tickets_by_Selar/screens/settings/offline/offline_modal_screen.dart'
+import 'package:{{name.snakeCase()}}/screens/layouts/home_tab.dart' as _i8;
+import 'package:{{name.snakeCase()}}/screens/scan/scan_screen.dart' as _i18;
+import 'package:{{name.snakeCase()}}/screens/settings/offline/offline_modal_screen.dart'
     as _i10;
-import 'package:Tickets_by_Selar/screens/settings/offline/offline_qr_screen.dart'
+import 'package:{{name.snakeCase()}}/screens/settings/offline/offline_qr_screen.dart'
     as _i11;
-import 'package:Tickets_by_Selar/screens/settings/offline/online_qr_screen.dart'
+import 'package:{{name.snakeCase()}}/screens/settings/offline/online_qr_screen.dart'
     as _i15;
-import 'package:Tickets_by_Selar/screens/settings/settings_home_screen.dart'
+import 'package:{{name.snakeCase()}}/screens/settings/settings_home_screen.dart'
     as _i19;
-import 'package:Tickets_by_Selar/shared/models/device_info.dart' as _i25;
+import 'package:{{name.snakeCase()}}/shared/models/device_info.dart' as _i25;
 
 /// generated route for
 /// [_i1.EventsHomeScreen]
 class EventsHomeRoute extends _i24.PageRouteInfo<void> {
   const EventsHomeRoute({List<_i24.PageRouteInfo>? children})
-      : super(
-          EventsHomeRoute.name,
-          initialChildren: children,
-        );
+    : super(EventsHomeRoute.name, initialChildren: children);
 
   static const String name = 'EventsHomeRoute';
 
@@ -75,10 +73,7 @@ class EventsHomeRoute extends _i24.PageRouteInfo<void> {
 /// [_i2.ForgotPasswordScreen]
 class ForgotPasswordRoute extends _i24.PageRouteInfo<void> {
   const ForgotPasswordRoute({List<_i24.PageRouteInfo>? children})
-      : super(
-          ForgotPasswordRoute.name,
-          initialChildren: children,
-        );
+    : super(ForgotPasswordRoute.name, initialChildren: children);
 
   static const String name = 'ForgotPasswordRoute';
 
@@ -98,13 +93,10 @@ class GroupScanAuthRoute extends _i24.PageRouteInfo<GroupScanAuthRouteArgs> {
     _i26.Key? key,
     List<_i24.PageRouteInfo>? children,
   }) : super(
-          GroupScanAuthRoute.name,
-          args: GroupScanAuthRouteArgs(
-            hostDevice: hostDevice,
-            key: key,
-          ),
-          initialChildren: children,
-        );
+         GroupScanAuthRoute.name,
+         args: GroupScanAuthRouteArgs(hostDevice: hostDevice, key: key),
+         initialChildren: children,
+       );
 
   static const String name = 'GroupScanAuthRoute';
 
@@ -121,10 +113,7 @@ class GroupScanAuthRoute extends _i24.PageRouteInfo<GroupScanAuthRouteArgs> {
 }
 
 class GroupScanAuthRouteArgs {
-  const GroupScanAuthRouteArgs({
-    required this.hostDevice,
-    this.key,
-  });
+  const GroupScanAuthRouteArgs({required this.hostDevice, this.key});
 
   final _i25.DeviceInfo hostDevice;
 
@@ -140,10 +129,7 @@ class GroupScanAuthRouteArgs {
 /// [_i4.GroupScanHostScreen]
 class GroupScanHostRoute extends _i24.PageRouteInfo<void> {
   const GroupScanHostRoute({List<_i24.PageRouteInfo>? children})
-      : super(
-          GroupScanHostRoute.name,
-          initialChildren: children,
-        );
+    : super(GroupScanHostRoute.name, initialChildren: children);
 
   static const String name = 'GroupScanHostRoute';
 
@@ -159,10 +145,7 @@ class GroupScanHostRoute extends _i24.PageRouteInfo<void> {
 /// [_i5.GroupScanHowScreen]
 class GroupScanHowRoute extends _i24.PageRouteInfo<void> {
   const GroupScanHowRoute({List<_i24.PageRouteInfo>? children})
-      : super(
-          GroupScanHowRoute.name,
-          initialChildren: children,
-        );
+    : super(GroupScanHowRoute.name, initialChildren: children);
 
   static const String name = 'GroupScanHowRoute';
 
@@ -183,14 +166,14 @@ class GroupScanRoute extends _i24.PageRouteInfo<GroupScanRouteArgs> {
     bool isClient = false,
     List<_i24.PageRouteInfo>? children,
   }) : super(
-          GroupScanRoute.name,
-          args: GroupScanRouteArgs(
-            key: key,
-            hostDeviceId: hostDeviceId,
-            isClient: isClient,
-          ),
-          initialChildren: children,
-        );
+         GroupScanRoute.name,
+         args: GroupScanRouteArgs(
+           key: key,
+           hostDeviceId: hostDeviceId,
+           isClient: isClient,
+         ),
+         initialChildren: children,
+       );
 
   static const String name = 'GroupScanRoute';
 
@@ -230,10 +213,7 @@ class GroupScanRouteArgs {
 /// [_i7.GuestListHomeScreen]
 class GuestListHomeRoute extends _i24.PageRouteInfo<void> {
   const GuestListHomeRoute({List<_i24.PageRouteInfo>? children})
-      : super(
-          GuestListHomeRoute.name,
-          initialChildren: children,
-        );
+    : super(GuestListHomeRoute.name, initialChildren: children);
 
   static const String name = 'GuestListHomeRoute';
 
@@ -249,10 +229,7 @@ class GuestListHomeRoute extends _i24.PageRouteInfo<void> {
 /// [_i8.HomeTabs]
 class HomeTabs extends _i24.PageRouteInfo<void> {
   const HomeTabs({List<_i24.PageRouteInfo>? children})
-      : super(
-          HomeTabs.name,
-          initialChildren: children,
-        );
+    : super(HomeTabs.name, initialChildren: children);
 
   static const String name = 'HomeTabs';
 
@@ -268,10 +245,7 @@ class HomeTabs extends _i24.PageRouteInfo<void> {
 /// [_i9.LoginScreen]
 class LoginRoute extends _i24.PageRouteInfo<void> {
   const LoginRoute({List<_i24.PageRouteInfo>? children})
-      : super(
-          LoginRoute.name,
-          initialChildren: children,
-        );
+    : super(LoginRoute.name, initialChildren: children);
 
   static const String name = 'LoginRoute';
 
@@ -287,10 +261,7 @@ class LoginRoute extends _i24.PageRouteInfo<void> {
 /// [_i10.OfflineModalScreen]
 class OfflineModalRoute extends _i24.PageRouteInfo<void> {
   const OfflineModalRoute({List<_i24.PageRouteInfo>? children})
-      : super(
-          OfflineModalRoute.name,
-          initialChildren: children,
-        );
+    : super(OfflineModalRoute.name, initialChildren: children);
 
   static const String name = 'OfflineModalRoute';
 
@@ -306,10 +277,7 @@ class OfflineModalRoute extends _i24.PageRouteInfo<void> {
 /// [_i11.OfflineQrScreen]
 class OfflineQrRoute extends _i24.PageRouteInfo<void> {
   const OfflineQrRoute({List<_i24.PageRouteInfo>? children})
-      : super(
-          OfflineQrRoute.name,
-          initialChildren: children,
-        );
+    : super(OfflineQrRoute.name, initialChildren: children);
 
   static const String name = 'OfflineQrRoute';
 
@@ -325,10 +293,7 @@ class OfflineQrRoute extends _i24.PageRouteInfo<void> {
 /// [_i12.OnboardingScreen]
 class OnboardingRoute extends _i24.PageRouteInfo<void> {
   const OnboardingRoute({List<_i24.PageRouteInfo>? children})
-      : super(
-          OnboardingRoute.name,
-          initialChildren: children,
-        );
+    : super(OnboardingRoute.name, initialChildren: children);
 
   static const String name = 'OnboardingRoute';
 
@@ -349,13 +314,10 @@ class OnlineGroupScanAuthRoute
     required String name,
     List<_i24.PageRouteInfo>? children,
   }) : super(
-          OnlineGroupScanAuthRoute.name,
-          args: OnlineGroupScanAuthRouteArgs(
-            key: key,
-            name: name,
-          ),
-          initialChildren: children,
-        );
+         OnlineGroupScanAuthRoute.name,
+         args: OnlineGroupScanAuthRouteArgs(key: key, name: name),
+         initialChildren: children,
+       );
 
   static const String name = 'OnlineGroupScanAuthRoute';
 
@@ -363,19 +325,13 @@ class OnlineGroupScanAuthRoute
     name,
     builder: (data) {
       final args = data.argsAs<OnlineGroupScanAuthRouteArgs>();
-      return _i13.OnlineGroupScanAuthScreen(
-        key: args.key,
-        name: args.name,
-      );
+      return _i13.OnlineGroupScanAuthScreen(key: args.key, name: args.name);
     },
   );
 }
 
 class OnlineGroupScanAuthRouteArgs {
-  const OnlineGroupScanAuthRouteArgs({
-    this.key,
-    required this.name,
-  });
+  const OnlineGroupScanAuthRouteArgs({this.key, required this.name});
 
   final _i26.Key? key;
 
@@ -396,13 +352,10 @@ class OnlineGuestListRoute
     required String productCode,
     List<_i24.PageRouteInfo>? children,
   }) : super(
-          OnlineGuestListRoute.name,
-          args: OnlineGuestListRouteArgs(
-            key: key,
-            productCode: productCode,
-          ),
-          initialChildren: children,
-        );
+         OnlineGuestListRoute.name,
+         args: OnlineGuestListRouteArgs(key: key, productCode: productCode),
+         initialChildren: children,
+       );
 
   static const String name = 'OnlineGuestListRoute';
 
@@ -419,10 +372,7 @@ class OnlineGuestListRoute
 }
 
 class OnlineGuestListRouteArgs {
-  const OnlineGuestListRouteArgs({
-    this.key,
-    required this.productCode,
-  });
+  const OnlineGuestListRouteArgs({this.key, required this.productCode});
 
   final _i26.Key? key;
 
@@ -442,13 +392,10 @@ class OnlineQrRoute extends _i24.PageRouteInfo<OnlineQrRouteArgs> {
     required String sessionCode,
     List<_i24.PageRouteInfo>? children,
   }) : super(
-          OnlineQrRoute.name,
-          args: OnlineQrRouteArgs(
-            key: key,
-            sessionCode: sessionCode,
-          ),
-          initialChildren: children,
-        );
+         OnlineQrRoute.name,
+         args: OnlineQrRouteArgs(key: key, sessionCode: sessionCode),
+         initialChildren: children,
+       );
 
   static const String name = 'OnlineQrRoute';
 
@@ -456,19 +403,13 @@ class OnlineQrRoute extends _i24.PageRouteInfo<OnlineQrRouteArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<OnlineQrRouteArgs>();
-      return _i15.OnlineQrScreen(
-        key: args.key,
-        sessionCode: args.sessionCode,
-      );
+      return _i15.OnlineQrScreen(key: args.key, sessionCode: args.sessionCode);
     },
   );
 }
 
 class OnlineQrRouteArgs {
-  const OnlineQrRouteArgs({
-    this.key,
-    required this.sessionCode,
-  });
+  const OnlineQrRouteArgs({this.key, required this.sessionCode});
 
   final _i26.Key? key;
 
@@ -484,10 +425,7 @@ class OnlineQrRouteArgs {
 /// [_i16.OnlineScanHowScreen]
 class OnlineScanHowRoute extends _i24.PageRouteInfo<void> {
   const OnlineScanHowRoute({List<_i24.PageRouteInfo>? children})
-      : super(
-          OnlineScanHowRoute.name,
-          initialChildren: children,
-        );
+    : super(OnlineScanHowRoute.name, initialChildren: children);
 
   static const String name = 'OnlineScanHowRoute';
 
@@ -503,10 +441,7 @@ class OnlineScanHowRoute extends _i24.PageRouteInfo<void> {
 /// [_i17.PastAndUpcomingEventsScreen]
 class PastAndUpcomingEventsRoute extends _i24.PageRouteInfo<void> {
   const PastAndUpcomingEventsRoute({List<_i24.PageRouteInfo>? children})
-      : super(
-          PastAndUpcomingEventsRoute.name,
-          initialChildren: children,
-        );
+    : super(PastAndUpcomingEventsRoute.name, initialChildren: children);
 
   static const String name = 'PastAndUpcomingEventsRoute';
 
@@ -526,13 +461,10 @@ class ScanRoute extends _i24.PageRouteInfo<ScanRouteArgs> {
     required String eventCode,
     List<_i24.PageRouteInfo>? children,
   }) : super(
-          ScanRoute.name,
-          args: ScanRouteArgs(
-            key: key,
-            eventCode: eventCode,
-          ),
-          initialChildren: children,
-        );
+         ScanRoute.name,
+         args: ScanRouteArgs(key: key, eventCode: eventCode),
+         initialChildren: children,
+       );
 
   static const String name = 'ScanRoute';
 
@@ -540,19 +472,13 @@ class ScanRoute extends _i24.PageRouteInfo<ScanRouteArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<ScanRouteArgs>();
-      return _i18.ScanScreen(
-        key: args.key,
-        eventCode: args.eventCode,
-      );
+      return _i18.ScanScreen(key: args.key, eventCode: args.eventCode);
     },
   );
 }
 
 class ScanRouteArgs {
-  const ScanRouteArgs({
-    this.key,
-    required this.eventCode,
-  });
+  const ScanRouteArgs({this.key, required this.eventCode});
 
   final _i26.Key? key;
 
@@ -568,10 +494,7 @@ class ScanRouteArgs {
 /// [_i19.SettingsHomeScreen]
 class SettingsHomeRoute extends _i24.PageRouteInfo<void> {
   const SettingsHomeRoute({List<_i24.PageRouteInfo>? children})
-      : super(
-          SettingsHomeRoute.name,
-          initialChildren: children,
-        );
+    : super(SettingsHomeRoute.name, initialChildren: children);
 
   static const String name = 'SettingsHomeRoute';
 
@@ -592,14 +515,14 @@ class SingleEventRoute extends _i24.PageRouteInfo<SingleEventRouteArgs> {
     required _i27.UserEvent event,
     List<_i24.PageRouteInfo>? children,
   }) : super(
-          SingleEventRoute.name,
-          args: SingleEventRouteArgs(
-            key: key,
-            eventCode: eventCode,
-            event: event,
-          ),
-          initialChildren: children,
-        );
+         SingleEventRoute.name,
+         args: SingleEventRouteArgs(
+           key: key,
+           eventCode: eventCode,
+           event: event,
+         ),
+         initialChildren: children,
+       );
 
   static const String name = 'SingleEventRoute';
 
@@ -644,13 +567,10 @@ class SingleGuestListRoute
     required String eventCode,
     List<_i24.PageRouteInfo>? children,
   }) : super(
-          SingleGuestListRoute.name,
-          args: SingleGuestListRouteArgs(
-            key: key,
-            eventCode: eventCode,
-          ),
-          initialChildren: children,
-        );
+         SingleGuestListRoute.name,
+         args: SingleGuestListRouteArgs(key: key, eventCode: eventCode),
+         initialChildren: children,
+       );
 
   static const String name = 'SingleGuestListRoute';
 
@@ -667,10 +587,7 @@ class SingleGuestListRoute
 }
 
 class SingleGuestListRouteArgs {
-  const SingleGuestListRouteArgs({
-    this.key,
-    required this.eventCode,
-  });
+  const SingleGuestListRouteArgs({this.key, required this.eventCode});
 
   final _i26.Key? key;
 
@@ -686,10 +603,7 @@ class SingleGuestListRouteArgs {
 /// [_i22.SplashScreen]
 class SplashRoute extends _i24.PageRouteInfo<void> {
   const SplashRoute({List<_i24.PageRouteInfo>? children})
-      : super(
-          SplashRoute.name,
-          initialChildren: children,
-        );
+    : super(SplashRoute.name, initialChildren: children);
 
   static const String name = 'SplashRoute';
 
@@ -705,10 +619,7 @@ class SplashRoute extends _i24.PageRouteInfo<void> {
 /// [_i23.StartScreen]
 class StartRoute extends _i24.PageRouteInfo<void> {
   const StartRoute({List<_i24.PageRouteInfo>? children})
-      : super(
-          StartRoute.name,
-          initialChildren: children,
-        );
+    : super(StartRoute.name, initialChildren: children);
 
   static const String name = 'StartRoute';
 

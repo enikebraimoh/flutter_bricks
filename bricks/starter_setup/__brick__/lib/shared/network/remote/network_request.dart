@@ -9,11 +9,7 @@ class NetworkException implements Exception {
   final int? statusCode;
   final dynamic data;
 
-  NetworkException({
-    required this.message,
-    this.statusCode,
-    this.data,
-  });
+  NetworkException({required this.message, this.statusCode, this.data});
 }
 
 class HttpService {
@@ -22,15 +18,18 @@ class HttpService {
   final bool hasAuthorization;
   final bool isFormType;
 
-  HttpService(
-      {required this.baseUrl,
-      this.hasAuthorization = false,
-      this.isFormType = false}) {
-    _dio = Dio(BaseOptions(
-      baseUrl: baseUrl,
-      connectTimeout: const Duration(seconds: 10),
-      receiveTimeout: const Duration(seconds: 10),
-    ));
+  HttpService({
+    required this.baseUrl,
+    this.hasAuthorization = false,
+    this.isFormType = false,
+  }) {
+    _dio = Dio(
+      BaseOptions(
+        baseUrl: baseUrl,
+        connectTimeout: const Duration(seconds: 10),
+        receiveTimeout: const Duration(seconds: 10),
+      ),
+    );
     _interceptorsInit();
   }
 
@@ -80,8 +79,11 @@ class HttpService {
     }
   }
 
-  Future<Response> put(urlEndpoint,
-      {data, Map<String, dynamic>? queryParameters}) async {
+  Future<Response> put(
+    urlEndpoint, {
+    data,
+    Map<String, dynamic>? queryParameters,
+  }) async {
     Response response;
 
     response = await _dio!
@@ -91,8 +93,11 @@ class HttpService {
     return response;
   }
 
-  Future<Response> delete(urlEndpoint,
-      {data, Map<String, dynamic>? queryParameters}) async {
+  Future<Response> delete(
+    urlEndpoint, {
+    data,
+    Map<String, dynamic>? queryParameters,
+  }) async {
     Response response;
 
     response = await _dio!
@@ -102,8 +107,11 @@ class HttpService {
     return response;
   }
 
-  Future<Response> patch(urlEndpoint,
-      {data, Map<String, dynamic>? queryParameters}) async {
+  Future<Response> patch(
+    urlEndpoint, {
+    data,
+    Map<String, dynamic>? queryParameters,
+  }) async {
     Response response;
 
     response = await _dio!
@@ -114,10 +122,13 @@ class HttpService {
   }
 
   _interceptorsInit() {
-    _dio!.interceptors.add(HeaderInterceptor(
+    _dio!.interceptors.add(
+      HeaderInterceptor(
         hasToken: hasAuthorization,
         dio: _dio!,
-        contentType: isFormType ? 'multipart/form-data' : 'application/json'));
+        contentType: isFormType ? 'multipart/form-data' : 'application/json',
+      ),
+    );
   }
 
   T _handleResponse<T>(Response response, T Function(dynamic data) parser) {
@@ -137,7 +148,7 @@ class HttpService {
       case DioExceptionType.connectionTimeout:
       case DioExceptionType.sendTimeout:
       case DioExceptionType.receiveTimeout:
-        return NetworkException(message: S.current.kindlyTryAgain);
+        return NetworkException(message: S.current.pleaseTryAgain);
 
       case DioExceptionType.connectionError:
         return NetworkException(message: S.current.noInternetConnection);

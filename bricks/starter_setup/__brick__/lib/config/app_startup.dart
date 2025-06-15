@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
-import 'package:{{name.pascalCase()}}/config/app_configs.dart';
-import 'package:{{name.pascalCase()}}/firebase_options.dart';
-import 'package:{{name.pascalCase()}}/shared/models/auth_user.dart';
-import 'package:{{name.pascalCase()}}/shared/services/firebase_notification_manager.dart';
-import 'package:{{name.pascalCase()}}/shared/utils/storage.dart';
+import 'package:{{name.snakeCase()}}/config/app_configs.dart';
+import 'package:{{name.snakeCase()}}/firebase_options.dart';
+import 'package:{{name.snakeCase()}}/shared/models/auth_user.dart';
+import 'package:{{name.snakeCase()}}/shared/services/firebase_notification_manager.dart';
+import 'package:{{name.snakeCase()}}/shared/utils/storage.dart';
 
 // This is our global ServiceLocator
 final getIt = GetIt.instance;
