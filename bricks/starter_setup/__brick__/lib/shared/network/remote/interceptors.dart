@@ -69,6 +69,6 @@ class HeaderInterceptor extends Interceptor {
     UserTokenManager.deleteAccessToken();
     LocalStorageUtils.delete(AppConstants.userObject);
 
-    AppRouter().pushAndPopUntil(const LoginRoute(), predicate: (_) => false);
+    // AppRouter().pushAndPopUntil(const LoginRoute(), predicate: (_) => false);
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../theme/colors.dart';
 
 class AppInputField extends StatefulWidget {
@@ -98,11 +97,7 @@ class _AppInputFieldState extends State<AppInputField> {
         if (widget.labelText != null) ...[
           Text(
             widget.labelText!,
-            style: TextStyle(
-              color: AppColors.textPrimary,
-              fontSize: 14,
-              fontFamily: GoogleFonts.dmSans().fontFamily,
-            ),
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
           const SizedBox(height: 4),
         ],

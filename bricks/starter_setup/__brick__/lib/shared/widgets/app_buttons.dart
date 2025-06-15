@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../theme/colors.dart';
 
 class AppFilledButton extends StatelessWidget {
@@ -95,15 +94,7 @@ class AppOutlinedButton extends StatelessWidget {
                 ),
               ),
             ] else ...[
-              Text(
-                text,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.primary,
-                  fontFamily: GoogleFonts.dmSans().fontFamily,
-                ),
-              ),
+              Text(text, style: Theme.of(context).textTheme.titleMedium),
             ],
           ],
         ),
