@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
-import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
 import 'package:{{name.snakeCase()}}/config/app_configs.dart';
 import 'package:{{name.snakeCase()}}/firebase_options.dart';
 import 'package:{{name.snakeCase()}}/shared/models/auth_user.dart';
@@ -32,7 +31,7 @@ class AppStartUp {
 
   Future<void> loadEnvironmentVariables() async {
     await dotenv.load(fileName: ".env");
-    MapboxOptions.setAccessToken(dotenv.env['MAPBOX_ACCESS_TOKEN']!);
+    // MapboxOptions.setAccessToken(dotenv.env['MAPBOX_ACCESS_TOKEN']!);
   }
 
   Future<void> loadStartUpConfig() async {
